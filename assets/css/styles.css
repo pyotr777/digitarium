@@ -1,0 +1,27 @@
+.current {
+    color: #aabbcc;
+}
+.date {
+    float:left;
+    width: 50%;
+    margin-bottom: 0.67em;
+}
+.author {
+    float: right;
+    text-align: right;
+    width: 50%;
+    margin-bottom: 0.67em;
+}
+
+code {
+    padding: 1pt;
+    margin: 1pt;
+    background-color: #f2f6fa;
+    border-radius: 3px;
+}
+
+img.scalable {
+    float:left;
+    width:100%;
+    height:auto;
+}

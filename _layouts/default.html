@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  {% for script in page.include_blocks %}
+    {% include {{ script }}.html %}
+  {% endfor %}
+  <body>
+    {% include nav.html %}
+
+    <div id="main" role="main" class="wrapper-content">
+      {{ content }}
+    </div>
+
+    {% include analytics.html %}
+  </body>
+
+  <div class="wrapper-footer-mobile">
+    <footer class="footer">
+      {% include footer.html %}
+    </footer>
+
+
+</html>
