@@ -236,5 +236,5 @@ Please note, that only offers with GPU are mentioned on this page. Some provider
   </div>
 
   <p>
-    <a href="/cloud-gpu-providers-more-graphs/">Even more graphs: compare calculation time and cost for a fixed amount of calculations.</a>
+    <a href="{{ '/cloud-gpu-providers-more-graphs/' | relative_url }}">Even more graphs: compare calculation time and cost for a fixed amount of calculations.</a>
   </p>

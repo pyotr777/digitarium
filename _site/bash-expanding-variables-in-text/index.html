@@ -14,6 +14,7 @@
 Today is $(date).
 I have $n things to do.
 
+
 Store text file contents in a variable and expand variables and commands in the text with:
 
 # Init variables
@@ -21,12 +22,14 @@ n=25
 # Store file in a variable
 text="$(echo EOF;cat $filename;echo EOF)"
 # Expand text (and print it to stdout)
-eval "cat &lt;&lt;$text"
+eval "cat &amp;lt;&amp;lt;$text"
+
 
 That’s it! You will see something like:
 
 Today is Thu Oct 15 12:04:56 JST 2015.
 You have 25 things to do.
+
 
 Note, that without echo EOF bash will use first line of text as a limit string for heredoc.
 " />
@@ -35,6 +38,7 @@ Note, that without echo EOF bash will use first line of text as a limit string
 Today is $(date).
 I have $n things to do.
 
+
 Store text file contents in a variable and expand variables and commands in the text with:
 
 # Init variables
@@ -42,12 +46,14 @@ n=25
 # Store file in a variable
 text="$(echo EOF;cat $filename;echo EOF)"
 # Expand text (and print it to stdout)
-eval "cat &lt;&lt;$text"
+eval "cat &amp;lt;&amp;lt;$text"
+
 
 That’s it! You will see something like:
 
 Today is Thu Oct 15 12:04:56 JST 2015.
 You have 25 things to do.
+
 
 Note, that without echo EOF bash will use first line of text as a limit string for heredoc.
 " />
@@ -185,13 +191,13 @@ Note, that without echo EOF bash will use first line of text as a limit string
     <ul class="tag">
       
       <li>
-        <a href="http://localhost:4000/tags#bash">
+        <a href="/tags#bash">
           bash
         </a>
       </li>
       
       <li>
-        <a href="http://localhost:4000/tags#expand variables">
+        <a href="/tags#expand variables">
           expand variables
         </a>
       </li>
@@ -202,22 +208,25 @@ Note, that without echo EOF bash will use first line of text as a limit string
   <div class="entry">
     <p>Say you have a text file with variables or commands in it:</p>
 
-<pre class="top-set:false top-margin:0 highlight:0 decode:true bottom-margin:15 show-title:false ranges:false nums:false nums-toggle:false">Today is $(date).
-I have $n things to do.</pre>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Today is $(date).
+I have $n things to do.
+</code></pre></div></div>
 
 <p>Store text file contents in a variable and expand variables and commands in the text with:</p>
 
-<pre class="top-set:false top-margin:0 bottom-set:false bottom-margin:15 show-title:false ranges:false nums:false nums-toggle:false wrap-toggle:false lang:sh decode:true "># Init variables
-n=25
-# Store file in a variable
-text="$(echo EOF;cat $filename;echo EOF)"
-# Expand text (and print it to stdout)
-eval "cat &lt;&lt;$text"</pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Init variables</span>
+<span class="nv">n</span><span class="o">=</span>25
+<span class="c"># Store file in a variable</span>
+<span class="nv">text</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">echo </span>EOF<span class="p">;</span><span class="nb">cat</span> <span class="nv">$filename</span><span class="p">;</span><span class="nb">echo </span>EOF<span class="si">)</span><span class="s2">"</span>
+<span class="c"># Expand text (and print it to stdout)</span>
+<span class="nb">eval</span> <span class="s2">"cat &amp;lt;&amp;lt;</span><span class="nv">$text</span><span class="s2">"</span>
+</code></pre></div></div>
 
 <p>That’s it! You will see something like:</p>
 
-<pre class="top-set:false top-margin:0 highlight:0 decode:true bottom-margin:15 show-title:false ranges:false nums:false nums-toggle:false">Today is Thu Oct 15 12:04:56 JST 2015.
-You have 25 things to do.</pre>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Today is Thu Oct 15 12:04:56 JST 2015.
+You have 25 things to do.
+</code></pre></div></div>
 
 <p>Note, that without <span class="lang:default decode:true crayon-inline">echo EOF</span> bash will use first line of text as a limit string for <a href="http://tldp.org/LDP/abs/html/here-docs.html" target="_blank">heredoc</a>.</p>
 
@@ -229,14 +238,14 @@ You have 25 things to do.</pre>
 <div class="pagination">
   
     <span class="prev" >
-      <a href="http://localhost:4000/docker-ecosystem/">
+      <a href="/docker-ecosystem/">
         ← Prev. post
       </a>
     </span>
   
   
     <span class="next" >
-      <a href="http://localhost:4000/cloud-gpu-providers-comparison/">
+      <a href="/cloud-gpu-providers-comparison/">
         Next post →
       </a>
     </span>

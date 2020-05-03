@@ -91,7 +91,7 @@ After training the sample network in parallel, I trained it on Xavier and on TX2
 
 The graph below shows time and validation accuracy per epoch for each training.
 
-<img class="scalable" src="/wp-content/uploads/2019/06/training_logs-2.png" alt=""  />
+<img class="scalable" src="{{ '/wp-content/uploads/2019/06/training_logs-2.png' | relative_url }}" alt=""  />
 
 Regarding epoch time (seconds per epoch) you can see, that:
 
