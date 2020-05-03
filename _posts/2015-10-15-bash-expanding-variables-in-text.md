@@ -4,7 +4,6 @@ title: 'Bash: Expanding variables and commands in text'
 date: 2015-10-15T11:54:19+09:00
 author: Peter Bryzgalov
 layout: post
-guid: http://comp.photo777.org/?p=191
 permalink: /bash-expanding-variables-in-text/
 categories:
   - public
@@ -37,4 +36,4 @@ Today is Thu Oct 15 12:04:56 JST 2015.
 You have 25 things to do.
 ```
 
-Note, that without <span class="lang:default decode:true crayon-inline">echo EOF</span> bash will use first line of text as a limit string for <a href="http://tldp.org/LDP/abs/html/here-docs.html" target="_blank">heredoc</a>.
+Note, that without `echo EOF` bash will use first line of text as a limit string for <a href="http://tldp.org/LDP/abs/html/here-docs.html" target="_blank">heredoc</a>.
