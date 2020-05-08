@@ -7,7 +7,6 @@ description:
 date: 2019-06-18T18:31:47+09:00
 author: Peter Bryzgalov
 layout: post
-# guid: http://comp.photo777.org/?p=727
 permalink: /horovod-on-nvidia-jetson/
 categories:
   - Machine Learning

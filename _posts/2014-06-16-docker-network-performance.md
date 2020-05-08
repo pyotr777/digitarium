@@ -4,7 +4,6 @@ title: Docker network performance
 date: 2014-06-16T14:54:50+09:00
 author: Peter Bryzgalov
 layout: post
-guid: http://comp.photo777.org/?p=5
 permalink: /docker-network-performance/
 categories:
   - Docker
@@ -233,11 +232,11 @@ ICC performance between one container with one iperf server and multiple contai
   </tr>
 </table>
 
-&nbsp;<figure id="attachment_18" aria-describedby="caption-attachment-18" style="width: 748px" class="wp-caption alignnone">
 
-[<img class="wp-image-18 size-full" src="http://comp.photo777.org/wp-content/uploads/2014/06/ICC1-m-1.png" alt="1 server multiple clients" width="748" height="414" srcset="http://comp.photo777.org/wp-content/uploads/2014/06/ICC1-m-1.png 748w, http://comp.photo777.org/wp-content/uploads/2014/06/ICC1-m-1-300x166.png 300w" sizes="(max-width: 748px) 100vw, 748px" />](http://comp.photo777.org/wp-content/uploads/2014/06/ICC1-m-1.png)<figcaption id="caption-attachment-18" class="wp-caption-text">1 server &#8211; multiple clients</figcaption></figure> 
 
-## 
+[<img class="wp-image-18 size-full" src="{{ '/wp-content/uploads/2014/06/ICC1-m-1.png' | relative_url }}" alt="1 server multiple clients"  />]({{ '/wp-content/uploads/2014/06/ICC1-m-1.png' | relative_url }})
+_1 server &#8211; multiple clients_
+
 
 ## Multiple servers and multiple clients
 
@@ -376,9 +375,10 @@ Below are the average performance results in Gbit/s.
       1.4
     </td>
   </tr>
-</table><figure id="attachment_19" aria-describedby="caption-attachment-19" style="width: 544px" class="wp-caption alignnone">
+</table>
 
-[<img class="wp-image-19 size-full" src="http://comp.photo777.org/wp-content/uploads/2014/06/ICCn-m-1.png" alt="ICCn-m-1" width="544" height="358" srcset="http://comp.photo777.org/wp-content/uploads/2014/06/ICCn-m-1.png 544w, http://comp.photo777.org/wp-content/uploads/2014/06/ICCn-m-1-300x197.png 300w" sizes="(max-width: 544px) 100vw, 544px" />](http://comp.photo777.org/wp-content/uploads/2014/06/ICCn-m-1.png)<figcaption id="caption-attachment-19" class="wp-caption-text">Multiple servers and multiple clients with 1 iperf process inside</figcaption></figure> 
+[<img class="wp-image-19 size-full" src="{{ '/wp-content/uploads/2014/06/ICCn-m-1.png' | relative_url }}" alt="ICCn-m-1"  />]({{ '/wp-content/uploads/2014/06/ICCn-m-1.png' | relative_url }})
+_Multiple servers and multiple clients with 1 iperf process inside._
 
 &nbsp;
 
@@ -572,6 +572,8 @@ Number of containers x number of iperf clients in one container
   </tr>
 </table>
 
-[<img class="alignnone size-full wp-image-45" src="http://comp.photo777.org/wp-content/uploads/2014/06/ICC1-n-m.png" alt="ICC1-n-m" width="882" height="413" srcset="http://comp.photo777.org/wp-content/uploads/2014/06/ICC1-n-m.png 882w, http://comp.photo777.org/wp-content/uploads/2014/06/ICC1-n-m-500x234.png 500w" sizes="(max-width: 882px) 100vw, 882px" />](http://comp.photo777.org/wp-content/uploads/2014/06/ICC1-n-m.png)
+[<img class="alignnone size-full wp-image-45" src="{{ '/wp-content/uploads/2014/06/ICC1-n-m.png' | relative_url }}" alt="ICC1-n-m"  />]({{ '/wp-content/uploads/2014/06/ICC1-n-m.png' | relative_url }})
 
-**_Running iperf clients in different containers gives better performance compared with the same number of clients running in one container (compare 1&#215;4 and 4&#215;1)._**
+### Conclusion
+
+Running iperf clients in different containers gives better performance compared with the same number of clients running in one container (compare 1&#215;4 and 4&#215;1).
