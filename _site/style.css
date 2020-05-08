@@ -92,22 +92,22 @@ h1, h2, h3, h5 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 24pt;
 }
 h1 a {
   color: inherit;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 19.2pt;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 12pt;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 9.6pt;
   color: #868e96;
 }
 
@@ -386,7 +386,7 @@ img {
   cursor: pointer;
   font-family: "Oleo Script", cursive;
   font-weight: 700;
-  font-size: 24pt;
+  font-size: 36pt;
   letter-spacing: 1px;
 }
 
