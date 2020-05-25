@@ -382,18 +382,21 @@ img {
 
 .site-name {
   margin: 0 auto;
-  color: #212529;
+  color: #495057;
   cursor: pointer;
-  font-family: "Oleo Script", cursive;
+  font-family: "Amatic SC", cursive;
   font-weight: 700;
   font-size: 36pt;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .site-description {
   margin: 15px auto;
-  color: #495057;
+  color: #adb5bd;
   font-size: 16px;
+  font-family: "Roboto Condensed", sans-serif;
+  /*letter-spacing: 2px;*/
 }
 @media screen and (max-width: 1200px) {
   .site-description {
@@ -455,7 +458,7 @@ nav a {
   display: inline;
   font-weight: 300;
   font-size: 10pt;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 .posts .tag li:before {
   content: '';
@@ -537,7 +540,7 @@ nav a {
 }
 .pagination > .prev a:hover, .pagination > .prev a:focus {
   color: #343a40;
-  border: 1px solid #63e6be;
+  border: 1px solid #4dadf7;
 }
 .pagination > .next {
   float: right;
@@ -552,7 +555,7 @@ nav a {
 }
 .pagination > .next a:hover, .pagination > .next a:focus {
   color: #343a40;
-  border: 1px solid #63e6be;
+  border: 1px solid #4dadf7;
 }
 
 .archive a {

@@ -371,18 +371,21 @@ img {
 
 .site-name {
   margin: 0 auto;
-  color: $oc-gray-9;
+  color: $oc-gray-7;
   cursor: pointer;
   font-family: $title-font;
   font-weight: 700;
   font-size: $title-font-size;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .site-description {
   margin: 15px auto;
-  color: $oc-gray-7;
+  color: $oc-gray-5;
   font-size: 16px;
+  font-family: $description-font;
+  /*letter-spacing: 2px;*/
 
   @include mobile {
     margin: 10px auto;
@@ -534,7 +537,7 @@ nav {
 
       &:hover, &:focus {
         color: $pagination-over-color;
-        border: 1px solid $oc-teal-3;
+        border: 1px solid $link-hover;
       }
     }
   }
@@ -551,7 +554,7 @@ nav {
 
       &:hover, &:focus {
         color: $pagination-over-color;
-        border: 1px solid $oc-teal-3;
+        border: 1px solid $link-hover;
       }
     }
   }
