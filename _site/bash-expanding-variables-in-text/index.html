@@ -10,56 +10,11 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Say you have a text file with variables or commands in it:
-
-Today is $(date).
-I have $n things to do.
-
-
-Store text file contents in a variable and expand variables and commands in the text with:
-
-# Init variables
-n=25
-# Store file in a variable
-text="$(echo EOF;cat $filename;echo EOF)"
-# Expand text (and print it to stdout)
-eval "cat &amp;lt;&amp;lt;$text"
-
-
-That’s it! You will see something like:
-
-Today is Thu Oct 15 12:04:56 JST 2015.
-You have 25 things to do.
-
-
-Note, that without echo EOF bash will use first line of text as a limit string for heredoc.
-" />
-    <meta property="og:description" content="Say you have a text file with variables or commands in it:
-
-Today is $(date).
-I have $n things to do.
-
-
-Store text file contents in a variable and expand variables and commands in the text with:
-
-# Init variables
-n=25
-# Store file in a variable
-text="$(echo EOF;cat $filename;echo EOF)"
-# Expand text (and print it to stdout)
-eval "cat &amp;lt;&amp;lt;$text"
-
-
-That’s it! You will see something like:
-
-Today is Thu Oct 15 12:04:56 JST 2015.
-You have 25 things to do.
-
-
-Note, that without echo EOF bash will use first line of text as a limit string for heredoc.
-" />
+    <meta name="description" content="How to use template files in bash.">
+    <meta property="og:description" content="Understanding how things work. One little piece at a time." />
     
-    <meta name="author" content="Digitarium" />
+
+    <meta name="author" content="Peter Bryzgalov" />
 
     
     <meta property="og:title" content="Bash: Expanding variables and commands in text" />
@@ -113,10 +68,6 @@ Note, that without echo EOF bash will use first line of text as a limit string
       
       
       <a href="/">Home page</a>
-      
-      
-      
-      <a href="/about">About</a>
       
       
       
@@ -193,13 +144,13 @@ Note, that without echo EOF bash will use first line of text as a limit string
     <ul class="tag">
       
       <li>
-        <a href="/tags#bash">
+        <a href="http://localhost:4000/tags#bash">
           bash
         </a>
       </li>
       
       <li>
-        <a href="/tags#expand variables">
+        <a href="http://localhost:4000/tags#expand variables">
           expand variables
         </a>
       </li>
@@ -240,14 +191,14 @@ You have 25 things to do.
 <div class="pagination">
   
     <span class="prev" >
-      <a href="/docker-ecosystem/">
+      <a href="http://localhost:4000/docker-ecosystem/">
         ← Prev. post
       </a>
     </span>
   
   
     <span class="next" >
-      <a href="/cloud-gpu-providers-comparison/">
+      <a href="http://localhost:4000/cloud-gpu-providers-comparison/">
         Next post →
       </a>
     </span>

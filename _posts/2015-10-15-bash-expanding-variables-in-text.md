@@ -1,6 +1,9 @@
 ---
 id: 191
 title: 'Bash: Expanding variables and commands in text'
+post_description:
+    How to use template files in bash.
+    
 date: 2015-10-15T11:54:19+09:00
 author: Peter Bryzgalov
 layout: post

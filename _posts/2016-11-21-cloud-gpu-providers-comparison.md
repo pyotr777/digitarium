@@ -1,7 +1,7 @@
 ---
 id: 378
 title: 'Cloud GPU  providers comparison'
-description:
+post_description:
   Interactive charts for comparing cloud GPU offers by cost and performance.
 
 date: 2016-11-21T17:11:47+09:00
@@ -191,7 +191,7 @@ Please note, that only offers with at least one GPU are mentioned on this page. 
     </div>
     
     <p>
-      The below graph shows cost per 1 <span title="Floating Point Operations per Second * 10e+12">TFlops</span> of GPU and CPU performance for the selected rental period in logarithmic scale. To change the rental period, use the buttons above or click on the “cost for rent period” graph.
+      The below graph shows the cost per 1 <span title="Floating Point Operations per Second * 10e+12">TFlops</span> of GPU and CPU performance for the selected rental period in logarithmic scale. To change the rental period, use the buttons above or click on the “cost for rent period” graph.
        </p>
     
     <div id="slice_cost_perf" style="width: 100%; height: 500px;">

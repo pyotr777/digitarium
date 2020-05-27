@@ -10,144 +10,11 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="
-Distributed training with Keras on NVIDIA Jetson TX2 and Xavier
-
-
-Horovod (github) is a software framework for distributed training of neural networks with Keras, Tensorflow, MxNet or PyTorch. Developed at Uber since 2017 it is still in beta version (latest release is v0.16.4 as of 2019/06/18).
-
-This is a short report on my setup for using a number of NVIDIA Jetson Developer Kits for distributed training.
-
-Prerequisites
-
-Install on all machines: MPI, NCCL, Tensorflow, Keras, Horovod.
-
-MPI
-OpenMPI should have been already installed with the Jetpack. It is important to have the same version on all computers. Check with $ mpirun --version
-
-Horovod
-
-$ sudo apt-get install libffi6 libffi-dev
-$ pip install --user horovod
-
-
-Run distributed training
-
-If installation finished without errors, you are ready to run a test. I used Keras MNIST example.
-
-It is important to have the script file on the PATH on all machines. If it’s not the case, you can use -x option to mpirun command to copy environment variable (PATH) to all machines.
-
-To start training I used the following command:
-
-$ mpirun -np 3 -H localhost:1,jetson1:1,jetson2:1 \
--mca btl_tcp_if_include eth0 -x NCCL_SOCKET_IFNAME=eth0 \
--bind-to none -map-by slot python keras_mnist.py
-
-
--np 3 tells MPI that I need 3 processes: 3 machines each with 1 GPU: 3 processes in total.
--H localhost:1,jetson1:1,jetson2:1 use 1 GPU on localhost (Xavier in my case), 1 GPU on jetson1 and one on jetson2 host. You must be able to login to these hosts with SSH without password ( ~/.ssh/config can help).
--mca btl_tcp_if_include eth0 and -x NCCL_SOCKET_IFNAME=eth0 options for using eth0 network interface.
--bind-to none -map-by slot OpenMPI options.
-
-Below is the video of running Horovod Keras MNIST sample on the 3 machines.
-
-How fast is parallel training? Check my notes below the video.
-
-
-
-Performance Analysis
-
-After training the sample network in parallel, I trained it on Xavier and on TX2 with the same parameters without parallelisation. The only hyper-parameter changed is the learning rate, which is set in the sample code to be larger for parallel training: lr = 1.0 * hvd.size(). hvd.size() is the number of MPI processes, which in my case is 3 for parallel training and 1 for one-machine training. I ran training in parallel on 3 machines, on Xavier only and on TX2 only until validation accuracy reached 0.99.
-
-The graph below shows time and validation accuracy per epoch for each training.
-
-
-
-Regarding epoch time (seconds per epoch) you can see, that:
-
-
-  For parallel training one epoch time is about the same as epoch time on TX2 (the slowest type of machine).
-  Epoch time on Xavier is the shortest – about 3 times shorter than on TX2.
-
-
-Conclusions
-
-Though accuracy gain per epoch for parallel training is higher than for training on one machine, one parallel training epoch time is equal to epoch time on the slowest of machines. That is because parallel training is done in a synchronous manner and after each epoch all workers share model weight gradients. That means the process on Xavier finishes one epoch earlier, but have to wait for the other two processes on TX2-s to finish.
-
-All-in-all, unbalance in performance between machines makes parallel training even slower than on one faster machine – Xavier. That, however, may change if more machines were used in training making accuracy gain per epoch even higher.
-
-You can learn more about parallel training from this thorough post Distributed TensorFlow using Horovod.
-" />
-    <meta property="og:description" content="
-Distributed training with Keras on NVIDIA Jetson TX2 and Xavier
-
-
-Horovod (github) is a software framework for distributed training of neural networks with Keras, Tensorflow, MxNet or PyTorch. Developed at Uber since 2017 it is still in beta version (latest release is v0.16.4 as of 2019/06/18).
-
-This is a short report on my setup for using a number of NVIDIA Jetson Developer Kits for distributed training.
-
-Prerequisites
-
-Install on all machines: MPI, NCCL, Tensorflow, Keras, Horovod.
-
-MPI
-OpenMPI should have been already installed with the Jetpack. It is important to have the same version on all computers. Check with $ mpirun --version
-
-Horovod
-
-$ sudo apt-get install libffi6 libffi-dev
-$ pip install --user horovod
-
-
-Run distributed training
-
-If installation finished without errors, you are ready to run a test. I used Keras MNIST example.
-
-It is important to have the script file on the PATH on all machines. If it’s not the case, you can use -x option to mpirun command to copy environment variable (PATH) to all machines.
-
-To start training I used the following command:
-
-$ mpirun -np 3 -H localhost:1,jetson1:1,jetson2:1 \
--mca btl_tcp_if_include eth0 -x NCCL_SOCKET_IFNAME=eth0 \
--bind-to none -map-by slot python keras_mnist.py
-
-
--np 3 tells MPI that I need 3 processes: 3 machines each with 1 GPU: 3 processes in total.
--H localhost:1,jetson1:1,jetson2:1 use 1 GPU on localhost (Xavier in my case), 1 GPU on jetson1 and one on jetson2 host. You must be able to login to these hosts with SSH without password ( ~/.ssh/config can help).
--mca btl_tcp_if_include eth0 and -x NCCL_SOCKET_IFNAME=eth0 options for using eth0 network interface.
--bind-to none -map-by slot OpenMPI options.
-
-Below is the video of running Horovod Keras MNIST sample on the 3 machines.
-
-How fast is parallel training? Check my notes below the video.
-
-
-
-Performance Analysis
-
-After training the sample network in parallel, I trained it on Xavier and on TX2 with the same parameters without parallelisation. The only hyper-parameter changed is the learning rate, which is set in the sample code to be larger for parallel training: lr = 1.0 * hvd.size(). hvd.size() is the number of MPI processes, which in my case is 3 for parallel training and 1 for one-machine training. I ran training in parallel on 3 machines, on Xavier only and on TX2 only until validation accuracy reached 0.99.
-
-The graph below shows time and validation accuracy per epoch for each training.
-
-
-
-Regarding epoch time (seconds per epoch) you can see, that:
-
-
-  For parallel training one epoch time is about the same as epoch time on TX2 (the slowest type of machine).
-  Epoch time on Xavier is the shortest – about 3 times shorter than on TX2.
-
-
-Conclusions
-
-Though accuracy gain per epoch for parallel training is higher than for training on one machine, one parallel training epoch time is equal to epoch time on the slowest of machines. That is because parallel training is done in a synchronous manner and after each epoch all workers share model weight gradients. That means the process on Xavier finishes one epoch earlier, but have to wait for the other two processes on TX2-s to finish.
-
-All-in-all, unbalance in performance between machines makes parallel training even slower than on one faster machine – Xavier. That, however, may change if more machines were used in training making accuracy gain per epoch even higher.
-
-You can learn more about parallel training from this thorough post Distributed TensorFlow using Horovod.
-" />
+    <meta name="description" content="Horovod is a software framework for distributed training of neural networks. This is a short report on my setup for using a number of NVIDIA Jetson Developer Kits for distributed training with Tensorflow.">
+    <meta property="og:description" content="Understanding how things work. One little piece at a time." />
     
-    <meta name="author" content="Digitarium" />
+
+    <meta name="author" content="Peter Bryzgalov" />
 
     
     <meta property="og:title" content="Horovod on NVIDIA Jetson" />
@@ -201,10 +68,6 @@ You can learn more about parallel training from this thorough post Distributed T
       
       
       <a href="/">Home page</a>
-      
-      
-      
-      <a href="/about">About</a>
       
       
       
@@ -281,61 +144,61 @@ You can learn more about parallel training from this thorough post Distributed T
     <ul class="tag">
       
       <li>
-        <a href="/tags#data parallelism">
+        <a href="http://localhost:4000/tags#data parallelism">
           data parallelism
         </a>
       </li>
       
       <li>
-        <a href="/tags#Horovod">
+        <a href="http://localhost:4000/tags#Horovod">
           Horovod
         </a>
       </li>
       
       <li>
-        <a href="/tags#Jetson AGX Xavier">
+        <a href="http://localhost:4000/tags#Jetson AGX Xavier">
           Jetson AGX Xavier
         </a>
       </li>
       
       <li>
-        <a href="/tags#Jetson TX2">
+        <a href="http://localhost:4000/tags#Jetson TX2">
           Jetson TX2
         </a>
       </li>
       
       <li>
-        <a href="/tags#Keras">
+        <a href="http://localhost:4000/tags#Keras">
           Keras
         </a>
       </li>
       
       <li>
-        <a href="/tags#machine learning">
+        <a href="http://localhost:4000/tags#machine learning">
           machine learning
         </a>
       </li>
       
       <li>
-        <a href="/tags#model training">
+        <a href="http://localhost:4000/tags#model training">
           model training
         </a>
       </li>
       
       <li>
-        <a href="/tags#Nvidia">
+        <a href="http://localhost:4000/tags#Nvidia">
           Nvidia
         </a>
       </li>
       
       <li>
-        <a href="/tags#NVIDIA Jetson">
+        <a href="http://localhost:4000/tags#NVIDIA Jetson">
           NVIDIA Jetson
         </a>
       </li>
       
       <li>
-        <a href="/tags#Tensorflow">
+        <a href="http://localhost:4000/tags#Tensorflow">
           Tensorflow
         </a>
       </li>
@@ -420,7 +283,7 @@ OpenMPI should have been already installed with the Jetpack. It is important to 
 <div class="pagination">
   
     <span class="prev" >
-      <a href="/cloud-gpu-providers-more-graphs/">
+      <a href="http://localhost:4000/cloud-gpu-providers-more-graphs/">
         ← Prev. post
       </a>
     </span>

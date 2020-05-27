@@ -108,11 +108,11 @@ h3 {
 
 h4 {
   font-size: 9.6pt;
-  color: #868e96;
+  color: #adb5bd;
 }
 
 h6 {
-  color: #868e96;
+  color: #adb5bd;
 }
 
 p {
@@ -248,7 +248,7 @@ blockquote {
   border-left: 0.2em solid #dee2e6;
 }
 blockquote p {
-  color: #868e96;
+  color: #adb5bd;
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -470,8 +470,8 @@ nav a {
 .posts .tag li > a {
   margin: 3px 3px 3px 0;
   padding: .5px 4px;
-  color: #868e96;
-  background-color: #e9ecef;
+  color: #adb5bd;
+  background-color: #f1f3f5;
   border-radius: 3px;
 }
 
@@ -488,7 +488,7 @@ nav a {
 .date {
   font-weight: 300;
   font-size: 10pt;
-  color: #868e96;
+  color: #adb5bd;
   margin-right: 4px;
 }
 
@@ -562,7 +562,7 @@ nav a {
   color: #343a40;
 }
 .archive time {
-  color: #868e96;
+  color: #adb5bd;
   font-size: 10pt;
   font-weight: 300;
   margin-left: 3px;
@@ -580,8 +580,8 @@ nav a {
 .tags > .label > li > a {
   display: inline-block;
   margin: 1px;
-  color: #868e96;
-  background-color: #e9ecef;
+  color: #adb5bd;
+  background-color: #f1f3f5;
   border-radius: 3px;
 }
 .tags > .label > li > a span {
@@ -597,7 +597,7 @@ nav a {
   color: #343a40;
 }
 .tags > .tag time {
-  color: #868e96;
+  color: #adb5bd;
   font-size: 10pt;
   font-weight: 300;
   margin-left: 3px;
@@ -611,6 +611,7 @@ nav a {
   clear: both;
   width: 100%;
   bottom: 0;
+  padding: 0 10px;
 }
 @media screen and (max-width: 1200px) {
   .wrapper-footer-desktop {
@@ -636,7 +637,7 @@ footer {
 }
 footer p {
   font-size: 10pt;
-  color: #868e96;
+  color: #adb5bd;
 }
 footer .svg-icon {
   display: block;

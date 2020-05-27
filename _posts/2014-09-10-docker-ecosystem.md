@@ -1,6 +1,8 @@
 ---
 id: 89
 title: Docker ecosystem
+post_description:
+  A chart with a structure of Docker-related tools organised by their functionality.
 date: 2014-09-10T17:00:35+09:00
 author: Peter Bryzgalov
 layout: post

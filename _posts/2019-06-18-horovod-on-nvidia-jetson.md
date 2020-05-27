@@ -1,7 +1,7 @@
 ---
 id: 727
 title: Horovod on NVIDIA Jetson
-description:
+post_description:
   Horovod is a software framework for distributed training of neural networks. This is a short report on my setup for using a number of NVIDIA Jetson Developer Kits for distributed training with Tensorflow.
 
 date: 2019-06-18T18:31:47+09:00

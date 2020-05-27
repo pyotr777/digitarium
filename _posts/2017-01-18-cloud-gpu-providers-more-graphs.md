@@ -1,7 +1,7 @@
 ---
 id: 444
 title: 'Cloud GPU  providers comparison &#8211; more graphs'
-description:
+post_description:
   Interactive charts to compare cloud GPU providers by calculation time for a fixed amount of calculations.
 
 date: 2017-01-18T11:30:14+09:00

@@ -14,8 +14,6 @@ favicon:
 navigation:
   - name: Home page
     url: /
-  - name: About
-    url: /about
   - name: Tags
     url: /tags
 
@@ -97,4 +95,4 @@ exclude:
   - README.md
   - CNAME
 
-excerpt_separator: ---
+# excerpt_separator: ---

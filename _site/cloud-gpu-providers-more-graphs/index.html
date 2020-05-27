@@ -10,336 +10,11 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Continued from the previous post.
-
-With the graphs below, you can compare calculation time and cost for a fixed amount of calculations in Floating Point Operations. (FLOPs***). Use the buttons above the charts to set calculations amount and the number of machines (virtual or bare metal; they are called nodes) used for calculations.
-
-Important notice: we assume that a task can be run on multiple computers WITHOUT any slowdown. This means that on N machines the task will finish N times faster. This could be true, for instance, in the case of hyperparameters search when you have multiple independent tasks.
-
-Graphs are not scaled when parameters change to make points movements clearly visible. To scale charts manually use “Autoscale” and “Reset axes” buttons that appear in the top right corner of the graphs when you bring the mouse cursor over it (on tablet devices tap the chart).
-
-
-  
-    
-  
-
-  
-    
-      Filter offers in all graphs below using these charts
-    
-
-    
-    
-
-    
-      
-        Number of offers by GPU model
-      
-    
-
-    
-      
-        
-          Number of GPUs
-        
-      
-
-      
-        
-          Total GPU performance (TFlops)
-        
-      
-    
-
-    
-      
-        
-          Memory (GB)
-        
-      
-
-      
-        
-          Total CPU performance (TFlops)
-        
-      
-    
-
-    
-      
-        Number of offers by Providers
-      
-    
-
-    
-    
-  
-
-  
-  
-
-  
-    
-      Set calculation task complexity in EFLOPs and nodes number
-    
-
-    
-      
-        EFLOPs
-      
-
-      
-      
-    
-
-    
-      
-        nodes
-      
-
-      
-      
-    
-
-    
-      The graph below shows calculation time and cost necessary for calculating a task with task complexity set in EFLOPs**** on GPU(s) provided by each offer.
-    
-
-    
-    
-
-    
-      &nbsp;
-    
-  
-
-  
-    
-      Set calculation task complexity in EFLOPs and nodes number
-    
-
-    
-      
-        EFLOPs
-      
-
-      
-      
-    
-
-    
-      
-        nodes
-      
-
-      
-      
-    
-
-    
-      The graph below shows calculation time and cost necessary for calculating a task with the same complexity using only provided CPUs.
-    
-
-    
-    
-
-    
-      &nbsp;
-    
-
-    
-
-    
-      
-        * All sums are in USD. Offers based on other currencies are converted using today's rates from European Central Bank:
-      
-
-      
-      
-
-      
-        All prices do not include taxes.
-      
-
-      
-        ** Performance data shows single precision FLOPS for GPUs and single precision FLOPS for CPUs. Beware that performance data is a rough estimate, and actual performance may vary greatly between applications.
-      
-
-      
-        *** Floating Point Operations (not to be confused with Flops &mdash; Floating Point Operations per Second).
-      
-
-
-        **** EFLOPs = 1 * 1018FLOPs. TFLOPs = 1 * 1012FLOPs.
-      
-
-" />
-    <meta property="og:description" content="Continued from the previous post.
-
-With the graphs below, you can compare calculation time and cost for a fixed amount of calculations in Floating Point Operations. (FLOPs***). Use the buttons above the charts to set calculations amount and the number of machines (virtual or bare metal; they are called nodes) used for calculations.
-
-Important notice: we assume that a task can be run on multiple computers WITHOUT any slowdown. This means that on N machines the task will finish N times faster. This could be true, for instance, in the case of hyperparameters search when you have multiple independent tasks.
-
-Graphs are not scaled when parameters change to make points movements clearly visible. To scale charts manually use “Autoscale” and “Reset axes” buttons that appear in the top right corner of the graphs when you bring the mouse cursor over it (on tablet devices tap the chart).
-
-
-  
-    
-  
-
-  
-    
-      Filter offers in all graphs below using these charts
-    
-
-    
-    
-
-    
-      
-        Number of offers by GPU model
-      
-    
-
-    
-      
-        
-          Number of GPUs
-        
-      
-
-      
-        
-          Total GPU performance (TFlops)
-        
-      
-    
-
-    
-      
-        
-          Memory (GB)
-        
-      
-
-      
-        
-          Total CPU performance (TFlops)
-        
-      
-    
-
-    
-      
-        Number of offers by Providers
-      
-    
-
-    
-    
-  
-
-  
-  
-
-  
-    
-      Set calculation task complexity in EFLOPs and nodes number
-    
-
-    
-      
-        EFLOPs
-      
-
-      
-      
-    
-
-    
-      
-        nodes
-      
-
-      
-      
-    
-
-    
-      The graph below shows calculation time and cost necessary for calculating a task with task complexity set in EFLOPs**** on GPU(s) provided by each offer.
-    
-
-    
-    
-
-    
-      &nbsp;
-    
-  
-
-  
-    
-      Set calculation task complexity in EFLOPs and nodes number
-    
-
-    
-      
-        EFLOPs
-      
-
-      
-      
-    
-
-    
-      
-        nodes
-      
-
-      
-      
-    
-
-    
-      The graph below shows calculation time and cost necessary for calculating a task with the same complexity using only provided CPUs.
-    
-
-    
-    
-
-    
-      &nbsp;
+    <meta name="description" content="Interactive charts to compare cloud GPU providers by calculation time for a fixed amount of calculations.">
+    <meta property="og:description" content="Understanding how things work. One little piece at a time." />
     
 
-    
-
-    
-      
-        * All sums are in USD. Offers based on other currencies are converted using today's rates from European Central Bank:
-      
-
-      
-      
-
-      
-        All prices do not include taxes.
-      
-
-      
-        ** Performance data shows single precision FLOPS for GPUs and single precision FLOPS for CPUs. Beware that performance data is a rough estimate, and actual performance may vary greatly between applications.
-      
-
-      
-        *** Floating Point Operations (not to be confused with Flops &mdash; Floating Point Operations per Second).
-      
-
-
-        **** EFLOPs = 1 * 1018FLOPs. TFLOPs = 1 * 1012FLOPs.
-      
-
-" />
-    
-    <meta name="author" content="Digitarium" />
+    <meta name="author" content="Peter Bryzgalov" />
 
     
     <meta property="og:title" content="Cloud GPU  providers comparison &#8211; more graphs" />
@@ -418,10 +93,6 @@ Graphs are not scaled when parameters change to make points movements clearly vi
       
       
       
-      <a href="/about">About</a>
-      
-      
-      
       <a href="/tags">Tags</a>
       
       
@@ -495,115 +166,115 @@ Graphs are not scaled when parameters change to make points movements clearly vi
     <ul class="tag">
       
       <li>
-        <a href="/tags#AMD">
+        <a href="http://localhost:4000/tags#AMD">
           AMD
         </a>
       </li>
       
       <li>
-        <a href="/tags#AWS">
+        <a href="http://localhost:4000/tags#AWS">
           AWS
         </a>
       </li>
       
       <li>
-        <a href="/tags#Cirrascale">
+        <a href="http://localhost:4000/tags#Cirrascale">
           Cirrascale
         </a>
       </li>
       
       <li>
-        <a href="/tags#cloud">
+        <a href="http://localhost:4000/tags#cloud">
           cloud
         </a>
       </li>
       
       <li>
-        <a href="/tags#cloud GPU">
+        <a href="http://localhost:4000/tags#cloud GPU">
           cloud GPU
         </a>
       </li>
       
       <li>
-        <a href="/tags#compare cloud GPUs">
+        <a href="http://localhost:4000/tags#compare cloud GPUs">
           compare cloud GPUs
         </a>
       </li>
       
       <li>
-        <a href="/tags#compare cloud providers">
+        <a href="http://localhost:4000/tags#compare cloud providers">
           compare cloud providers
         </a>
       </li>
       
       <li>
-        <a href="/tags#compare costs">
+        <a href="http://localhost:4000/tags#compare costs">
           compare costs
         </a>
       </li>
       
       <li>
-        <a href="/tags#compare price">
+        <a href="http://localhost:4000/tags#compare price">
           compare price
         </a>
       </li>
       
       <li>
-        <a href="/tags#comparison">
+        <a href="http://localhost:4000/tags#comparison">
           comparison
         </a>
       </li>
       
       <li>
-        <a href="/tags#cost">
+        <a href="http://localhost:4000/tags#cost">
           cost
         </a>
       </li>
       
       <li>
-        <a href="/tags#could providers">
+        <a href="http://localhost:4000/tags#could providers">
           could providers
         </a>
       </li>
       
       <li>
-        <a href="/tags#EC2">
+        <a href="http://localhost:4000/tags#EC2">
           EC2
         </a>
       </li>
       
       <li>
-        <a href="/tags#GPU">
+        <a href="http://localhost:4000/tags#GPU">
           GPU
         </a>
       </li>
       
       <li>
-        <a href="/tags#GPU performance">
+        <a href="http://localhost:4000/tags#GPU performance">
           GPU performance
         </a>
       </li>
       
       <li>
-        <a href="/tags#LeaderTelecom">
+        <a href="http://localhost:4000/tags#LeaderTelecom">
           LeaderTelecom
         </a>
       </li>
       
       <li>
-        <a href="/tags#Nvidia">
+        <a href="http://localhost:4000/tags#Nvidia">
           Nvidia
         </a>
       </li>
       
       <li>
-        <a href="/tags#Sakura internet">
+        <a href="http://localhost:4000/tags#Sakura internet">
           Sakura internet
         </a>
       </li>
       
       <li>
-        <a href="/tags#Softlayer">
+        <a href="http://localhost:4000/tags#Softlayer">
           Softlayer
         </a>
       </li>
@@ -784,14 +455,14 @@ Graphs are not scaled when parameters change to make points movements clearly vi
 <div class="pagination">
   
     <span class="prev" >
-      <a href="/cloud-gpu-providers-comparison/">
+      <a href="http://localhost:4000/cloud-gpu-providers-comparison/">
         ← Prev. post
       </a>
     </span>
   
   
     <span class="next" >
-      <a href="/horovod-on-nvidia-jetson/">
+      <a href="http://localhost:4000/horovod-on-nvidia-jetson/">
         Next post →
       </a>
     </span>
