@@ -39,17 +39,6 @@ Install on all machines: MPI, NCCL, Tensorflow, Keras, Horovod.
 **MPI**
 OpenMPI should have been already installed with the Jetpack. It is important to have the same version on all computers. Check with `$ mpirun --version`
 
-**NCCL**
-
-Build from the source
-
-```bash
-$ sudo apt-get update
-$ sudo apt-get install build-essential devscripts debhelper fakeroot
-$ git clone https://github.com/nvidia/nccl
-$ cd nccl
-$ make -j src.build
-```
 
 **Horovod**
 
@@ -90,7 +79,7 @@ After training the sample network in parallel, I trained it on Xavier and on TX2
 
 The graph below shows time and validation accuracy per epoch for each training.
 
-<img class="scalable" src="{{ '/wp-content/uploads/2019/06/training_logs-2.png' | relative_url }}" alt=""  />
+<img class="scalable" src="{{ '../wp-content/uploads/2019/06/training_logs-2.png' | relative_url }}" alt=""  />
 
 Regarding epoch time (seconds per epoch) you can see, that:
 

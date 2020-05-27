@@ -1,6 +1,9 @@
 ---
 id: 444
 title: 'Cloud GPU  providers comparison &#8211; more graphs'
+description:
+  Interactive charts to compare cloud GPU providers by calculation time for a fixed amount of calculations.
+
 date: 2017-01-18T11:30:14+09:00
 author: Peter Bryzgalov
 layout: post
@@ -35,11 +38,12 @@ tags:
 
 Continued from [the previous post](/cloud-gpu-providers-comparison/).
 
-With the graphs below you can compare calculation time and cost for a fixed amount of calculations in Floating Point Operations (FLOPs<sup><a href="#notes">***</a></sup>). Use buttons above the graphs to set calculations amount and number of virtual or bare metal machines called &#8220;nodes&#8221; used for calculations.
+With the graphs below, you can compare calculation time and cost for a fixed amount of calculations in Floating Point Operations. (FLOPs<sup><a href="#notes">\*\*\*</a></sup>). Use the buttons above the charts to set calculations amount and the number of machines (virtual or bare metal; they are called nodes) used for calculations.
 
-Important notice: we assume that a task can be run on multiple computers WITHOUT any slowdown. This means that on N machines the task will finish N times faster. This could be true, for instance, in case of hyperparameters search when you have multiple independant tasks.
 
-Graphs are not scaled when parameters change to make points movements clearly visible. To scale graphs manually use &#8220;Autoscale&#8221; and &#8220;Reset axes&#8221; buttons that appear in the top right corner of the graphs when you bring the mouse cursor over it (on tablet devices tap the graph).
+Important notice: we assume that a task can be run on multiple computers WITHOUT any slowdown. This means that on N machines the task will finish N times faster. This could be true, for instance, in the case of hyperparameters search when you have multiple independent tasks.
+
+Graphs are not scaled when parameters change to make points movements clearly visible. To scale charts manually use “Autoscale” and “Reset axes” buttons that appear in the top right corner of the graphs when you bring the mouse cursor over it (on tablet devices tap the chart).
 
 <p  class="note" id="updated">
   <p>
@@ -174,7 +178,7 @@ Graphs are not scaled when parameters change to make points movements clearly vi
 
     <div class="note" id="notes">
       <p>
-        * All sums are in USD. Offers based on other currencies are converted using today&#8217;s rates from <a href=http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html target=_blank>European Central Bank</a>:
+        * All sums are in USD. Offers based on other currencies are converted using today's rates from <a href="http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html" target="_blank">European Central Bank</a>:
       </p>
 
       <div id="rates">
