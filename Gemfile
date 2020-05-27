@@ -8,3 +8,4 @@ source "https://rubygems.org"
 gem "jekyll"
 gem "github-pages", group: :jekyll_plugins
 gem "rouge"
+gem "activesupport", ">= 6.0.3.1"
