@@ -7,7 +7,6 @@ post_description:
 date: 2017-01-18T11:30:14+09:00
 author: Peter Bryzgalov
 layout: post
-# guid: http://comp.photo777.org/?p=444
 permalink: /cloud-gpu-providers-more-graphs/
 include_blocks:
   - cloud_gpus
@@ -18,10 +17,11 @@ tags:
   - AMD
   - AWS
   - Cirrascale
-  - cloud
+  - cloud computing
   - cloud GPU
+  - cloud GPU providers
+  - cloud providers comparison
   - compare cloud GPUs
-  - compare cloud providers
   - compare costs
   - compare price
   - comparison
@@ -30,6 +30,7 @@ tags:
   - EC2
   - GPU
   - GPU performance
+  - Intel Xeon
   - LeaderTelecom
   - Nvidia
   - Sakura internet

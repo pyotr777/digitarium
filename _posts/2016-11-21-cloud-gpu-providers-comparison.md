@@ -7,7 +7,6 @@ post_description:
 date: 2016-11-21T17:11:47+09:00
 author: Peter Bryzgalov
 layout: post
-# guid: http://comp.photo777.org/?p=378
 permalink: /cloud-gpu-providers-comparison/
 image: /wp-content/uploads/2017/04/stair_eyecatch-1-672x280.png
 include_blocks:
@@ -16,7 +15,6 @@ include_blocks:
 categories:
   - Cloud GPU providers
 tags:
-  - Amazon
   - AMD
   - AWS
   - Cirrascale
@@ -26,11 +24,11 @@ tags:
   - cloud GPU providers
   - cloud providers comparison
   - compare cloud GPUs
-  - compare cloud providers
   - compare costs
   - compare price
-  - deep neural networks
   - EC2
+  - GPU
+  - GPU performance
   - Intel Xeon
   - LeaderTelecom
   - machine learning
