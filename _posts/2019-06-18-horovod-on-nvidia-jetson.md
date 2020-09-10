@@ -32,7 +32,7 @@ Horovod (<a href="https://github.com/horovod/horovod" target="_blank" rel="noope
 
 This is a short report on my setup for using a number of NVIDIA Jetson Developer Kits for distributed training.
 
-#### Prerequisites
+### Prerequisites
 
 Install on all machines: MPI, NCCL, Tensorflow, Keras, Horovod.
 
