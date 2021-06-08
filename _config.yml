@@ -1,7 +1,8 @@
 
 name: Digitarium
 description: Understanding how things work. One little piece at a time.
-
+url: https://pyotr777.github.io/
+baseurl: /digitarium
 
 # 你的博客logo图片URL，建议尺寸不超过300px × 300px
 avatar:
@@ -40,7 +41,7 @@ footer-links:
 
 
 # 站点页脚的文字
-footer-text: Copyright (c) 2019 Bryzgalov Peter, <a href="https://stair.center" target="_blank">Stair lab</a>, <a href="http://www.it-chiba.ac.jp" target="_blank">Chiba Institute of Technology</a>, Japan
+footer-text: Copyright (c) 2019-2021 Bryzgalov Peter, <a href="https://stair.center" target="_blank">Stair lab</a>, <a href="http://www.it-chiba.ac.jp" target="_blank">Chiba Institute of Technology</a>, Japan
 
 # 输入Disqus shortname，即可添加评论区，细节可阅读文档。
 # disqus: loffer #shortname
