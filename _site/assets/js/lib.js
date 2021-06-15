@@ -113,7 +113,8 @@ function getRates() {
     msg.innerHTML = "Loading data...";
     document.getElementById("updated").innerHTML = last_update;
 
-    $.getJSON("http://data.fixer.io/api/latest?access_key=37e8af59f58a677af7e535d5284568ba", setRates);
+    // $.getJSON("http://data.fixer.io/api/latest?access_key=37e8af59f58a677af7e535d5284568ba", setRates);
+    $.getJSON("https://api.currencyfreaks.com/latest?apikey=8298c16965e74856af43ea5d6b2a2598&format=json", setRates);
     // $.getJSON("https://api.exchangeratesapi.io/latest?symbols=RUB,EUR,USD,JPY&base=USD", setRates);
 }
 
@@ -205,13 +206,13 @@ function processStaticData(results) {
             month_limit_native: row[10],
             setup_native: row[11],
             currency:   row[12],
-            minutely:   convert2BaseCurrency(row[5],row[12]),
-            hourly:     convert2BaseCurrency(row[6],row[12]),
-            weekly:     convert2BaseCurrency(row[7],row[12]),
-            monthly:    convert2BaseCurrency(row[8],row[12]),
-            yearly:     convert2BaseCurrency(row[9],row[12]),
-            month_limit:convert2BaseCurrency(row[10],row[12]),
-            setup:      convert2BaseCurrency(row[11],row[12]),
+            minutely:   convertCurrency(row[5],row[12]),
+            hourly:     convertCurrency(row[6],row[12]),
+            weekly:     convertCurrency(row[7],row[12]),
+            monthly:    convertCurrency(row[8],row[12]),
+            yearly:     convertCurrency(row[9],row[12]),
+            month_limit:convertCurrency(row[10],row[12]),
+            setup:      convertCurrency(row[11],row[12]),
             cpu_p:      row[13],
             cpu_perf_group: getGroup(row[13],[0.5,1,1.5,2,2.5]),
             gpu_p:     row[14],
@@ -757,8 +758,8 @@ function getHours4Quote(offer, sum) {
     return h;
 }
 
-// Convert SUM in currency to base_currency
-function convert2BaseCurrency(sum, from) {
+// Convert SUM in 'from' currency to 'to' currency
+function convertCurrency(sum, from) {
     to = "USD";
     if (sum == null || sum == "") return "";
     console.log("convert from "+from+" to "+to);
