@@ -98,9 +98,9 @@ var processing = false; // prevent onchange event loop for providers filter.
 var setRates = function(data) {
     rates = data.rates;
     rates.base = data.base
-    // alert(rates.USD);
+    // alert(rates);
     // alert(rates.base);
-    //alert(data.timestamp);
+    // alert(data.timestamp);
 
     loadData(CSV_file);
 }
@@ -113,8 +113,8 @@ function getRates() {
     msg.innerHTML = "Loading data...";
     document.getElementById("updated").innerHTML = last_update;
 
-    // $.getJSON("http://data.fixer.io/api/latest?access_key=37e8af59f58a677af7e535d5284568ba&symbols = RUB,USD,JPY,EUR", setRates);
-    $.getJSON("https://api.exchangeratesapi.io/latest?symbols=RUB,EUR,USD,JPY&base=USD", setRates);
+    $.getJSON("http://data.fixer.io/api/latest?access_key=37e8af59f58a677af7e535d5284568ba", setRates);
+    // $.getJSON("https://api.exchangeratesapi.io/latest?symbols=RUB,EUR,USD,JPY&base=USD", setRates);
 }
 
 
@@ -761,8 +761,8 @@ function getHours4Quote(offer, sum) {
 function convert2BaseCurrency(sum, from) {
     to = "USD";
     if (sum == null || sum == "") return "";
-    // console.log("convert from "+from+" to "+to);
-    // console.log("SUM="+sum+", rate:"+rates[from]+"/"+rates[to])+" base:"+rates.base;
+    console.log("convert from "+from+" to "+to);
+    console.log("SUM="+sum+", rate:"+rates[from]/rates[to]);
 
     if (from != to) {
         try {
