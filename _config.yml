@@ -1,8 +1,8 @@
 
 name: Digitarium
 description: Understanding how things work. One little piece at a time.
-url: https://pyotr777.github.io/
-baseurl: /digitarium
+url: https://www.digitarium.tk/
+baseurl: 
 
 # 你的博客logo图片URL，建议尺寸不超过300px × 300px
 avatar:
