@@ -1,7 +1,7 @@
 
 name: Digitarium
 description: Understanding how things work. One little piece at a time.
-url: https://www.digitarium.tk/
+url: https://www.digitarium.ml/
 baseurl: 
 
 # 你的博客logo图片URL，建议尺寸不超过300px × 300px
@@ -11,15 +11,17 @@ avatar:
 favicon:
 
 
-# 菜单中的按钮
+# Navigation menu
 navigation:
   - name: Home page
     url: /
   - name: Tags
     url: /tags
+  - name: Blog
+    url: /blog
 
 # 每页的文章数
-paginate: 4
+paginate: 5
 
 # 你的社交网络链接，它们会作为图标出现在你的网站页脚中，可选填写
 footer-links:
