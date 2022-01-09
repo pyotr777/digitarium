@@ -1,13 +1,13 @@
 
 name: Digitarium
-description: Understanding how things work. One little piece at a time.
+description: This site is mainly about CNN training, GPUs and Docker. My personal blog (Russian and Japanese) is <a href='blog'>here</a>. 
 url: https://www.digitarium.ml/
 baseurl: 
 
-# 你的博客logo图片URL，建议尺寸不超过300px × 300px
+# 300px × 300px
 avatar:
 
-# 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
+# favicon 64px × 64px
 favicon:
 
 
