@@ -1,6 +1,6 @@
 
 name: Digitarium
-description: This site is mainly about CNN training, GPUs and Docker. My personal blog (Russian and Japanese) is <a href='blog'>here</a>. 
+description: This site is mainly about CNN training, GPUs and Docker. My personal blog (Russian and Japanese) is <a href='/blog'>here</a>. 
 url: https://www.digitarium.ml/
 baseurl: 
 
