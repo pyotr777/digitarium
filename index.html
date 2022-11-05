@@ -9,37 +9,37 @@ layout: default
 <div class="posts">
   {% for post in paginator.posts %}
     {% unless post.categories contains "personal blog" %}
-      <article class="post">
-        <h1>
-          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        </h1>
+    <article class="post">
+      <h1>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      </h1>
 
-        <div clsss="meta">
-          <span class="date">
-            {{ post.date | date: "%Y-%m-%d" }}
-          </span>
+      <div clsss="meta">
+        <span class="date">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </span>
 
-          <ul class="tag">
-            {% for tag in post.tags %}
-            <li>
-              <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
-                {{ tag }}
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+        <ul class="tag">
+          {% for tag in post.tags %}
+          <li>
+            <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+              {{ tag }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
 
-        <div class="entry">
-          {% if post.post_description %}
-            {{ post.post_description }}
-          {% else %}
-            {{ post.excerpt }}
-          {% endif %}
-        </div>
+      <div class="entry">
+        {% if post.post_description %}
+          {{ post.post_description }}
+        {% else %}
+          {{ post.excerpt }}
+        {% endif %}
+      </div>
 
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      </article>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
     {% endunless %}
   {% endfor %}
 </div>
