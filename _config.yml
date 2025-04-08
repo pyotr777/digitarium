@@ -1,8 +1,8 @@
 
 name: Digitarium
-description: This site is mainly about CNN training, GPUs and Docker. My personal blog (Russian and Japanese) is <a href='/blog'>here</a>. 
-url: https://www.digitarium.ml
-baseurl: 
+description: This site is mainly about DNN training, GPUs and Docker. My personal blog (Russian and Japanese) is <a href='/blog'>here</a>.
+url: https://www.digitarium.cc
+baseurl:
 
 # 300px × 300px
 avatar:
@@ -24,9 +24,8 @@ navigation:
 paginate: 5
 paginate_path: /page:num/
 
-# 你的社交网络链接，它们会作为图标出现在你的网站页脚中，可选填写
+# Your social network links, which will appear as icons in the footer of your website, optional fill-in
 footer-links:
-  # weibo: frommidworld #请输入你的微博个性域名 https://www.weibo.com/<thispart>
   behance: # https://www.behance.net/<>
   dribbble: # https://dribbble.com/<>
   email: peterbryz@yahoo.com
@@ -34,36 +33,35 @@ footer-links:
   flickr: #https://www.flickr.com/<>
   github: pyotr777 #https://github.com/<>
   instagram: pyotr777 #https://instagram.com/<>
-  linkedin: #https://www.linkedin.com/in/<>
+  linkedin: peter-bryzgalov-8794458a # https://www.linkedin.com/in//
   pinterest: # pyotr777 #https://www.pinterest.com/<>
-  rss: #随便填点啥RSS就能用了
   stackoverflow: # http://stackoverflow.com/<>
   tumblr: # https://<username>.tumblr.com
   youtube: pyotr777 # channel/<your_long_string> or user/<user-name>
   twitter: pyotr777 # https://www.twitter.com/<your_twitter_username>
 
 
-# 站点页脚的文字
+# Text in the site footer
 footer-text: Copyright (c) 2019-2021 Bryzgalov Peter, <a href="https://stair.center" target="_blank">Stair lab</a>, <a href="http://www.it-chiba.ac.jp" target="_blank">Chiba Institute of Technology</a>, Japan
 
-# 输入Disqus shortname，即可添加评论区，细节可阅读文档。
+# Enter Disqus shortname to add a comment section, read the documentation for details.
 # disqus: loffer #shortname
 
-# 输入Google Analytics web tracking code
+# Google Analytics web tracking code
 #google_analytics:
 
-# 输入你的网站域名（如果你没有添加自己的域名，而是直接用GitHub pages分配的域名的话可以省略）
-# url:
+# Enter your website's domain name (you can omit it if you don't add your own domain name, but use the one assigned by GitHub pages)
+# url.
 
-# 添加你的博客的二级域名，一般来说是你的repository名
-# 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
-# 那么就写成 "/repository-name"
+# Add your blog's second-level domain name, typically your repository name
+# If your blog's URL is: (http://yourusername.github.io/repository-name)
+# then write it as "/repository-name"
 # baseurl: ""
 
 
 #
-# !! 以下所有设置都不需要更改 !!
-#
+# !!! None of the following settings need to be changed !!!
+#!
 
 permalink: /:title/
 
