@@ -1,0 +1,6 @@
+site
+*.*
+!.gitignore
+!*.html
+!*.css
+!*.js
