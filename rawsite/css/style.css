@@ -437,13 +437,14 @@ nav a {
 }
 
 .wrapper-content {
-  float: right;
-  width: 70%;
+  margin-left: 30%; /* width of the fixed .wrapper-sidebar */
+  padding: 40px;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 1200px) {
   .wrapper-content {
-    float: none;
-    width: 100%;
+    margin-left: 0;
+    padding: 24px;
   }
 }
 

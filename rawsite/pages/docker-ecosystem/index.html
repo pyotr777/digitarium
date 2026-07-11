@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <base href="" />
+  <title>Docker ecosystem</title>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <meta name="description" content="A chart with a structure of Docker-related tools organised by their functionality." />
+    <meta name="author" content="Peter Bryzgalov" />
+    <meta property="twitter:title" content="Docker ecosystem" />
+
+  <!-- Async font loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Digitarium - This site is mainly about DNN training, GPUs and Docker. My personal blog (Russian and Japanese) is <a href='/blog'>here</a>." href="/feed.xml" />
+</head>
+
+<body>
+  <script type="text/python">
+    html, soap = include("../../_include/header.html")
+    print(html)
+  </script>
+  <div id="main" class="wrapper-content">
+
+    <h1>Docker ecosystem</h1>
+    <span class="date">
+        2014-09-10
+    </span>
+    <p>This chart depicts a structure of <a title="Docker" href="http://https://www.docker.com" target="_blank">Docker</a>-related tools in terms of their functionality. Docker ecosystem is ever changing, so is this chart. I plan to update it more or less regularly. Any suggestions on how to improve it are welcome.<figure id="attachment_241" aria-describedby="caption-attachment-241" style="width: 600px" class="wp-caption alignnone"></figure></p>
+
+<p><a href="images/Docker-ecosystem-8.6.1.pdf" target="_blank">
+  <img class="alignnone wp-image-258 size-full" src="images/Docker-ecosystem-8.6.1.png" alt="docker-ecosystem-8-6-1" width="600" height="559" /><em>Link to a large PDF file.</em>
+</a></p>
+
+<p>Last update 2016/10/14</p>
+
+<h2 id="about-classification">About classification</h2>
+
+<h3 id="service-discovery">Service discovery</h3>
+
+<p>Tools for registering and searching information about services provided by applications running in containers (including multi-host applications).</p>
+
+<h3 id="orchestration">Orchestration</h3>
+
+<p>Tools with main purpose of managing multi-host multi-container applications. Usually help managing multiple containers and network connections between them.</p>
+
+<h3 id="automation">Automation</h3>
+
+<p>Tools that help :<br />
+a. making containers easier to use,<br />
+b. giving containers new features,<br />
+c. building a service powered by containers.</p>
+
+<h3 id="monitoring">Monitoring</h3>
+
+<p>Tools for monitoring resources used by containers, containers heath- check, monitoring in-container environment.</p>
+
+<h3 id="os">OS</h3>
+
+<p>Light-weight OS for running containers.</p>
+
+<h3 id="networking">Networking</h3>
+
+<p>Tools for organising inter-container and host-container communications.</p>
+
+<h3 id="data-and-file-systems">Data and File Systems</h3>
+
+<p>Tools for managing data in containers and tools that include or control Docker file system plugins.</p>
+
+<p><em>Note: Tools’ features presented on the chart are based on what is advertised on the tool web site or on information provided by the tool developers.</em></p>
+  </div>
+
+</body>
+</html>

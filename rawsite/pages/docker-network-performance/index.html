@@ -23,7 +23,13 @@
 </head>
 
 <body>
-  <h1>Docker network performance</h1>
+  <script type="text/python">
+    html, soap = include("../../_include/header.html")
+    print(html)
+  </script>
+  <div id="main" class="wrapper-content">
+
+    <h1>Docker network performance</h1>
   <span class="date">
       2014-06-16
   </span>
@@ -587,6 +593,7 @@
   <h3 id="conclusion">Conclusion</h3>
 
   <p>Running iperf clients in different containers gives better performance compared with the same number of clients running in one container (compare 1×4 and 4×1).</p>
+  </div>
 
 </body>
 </html>
