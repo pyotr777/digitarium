@@ -10,6 +10,7 @@
   from bs4 import BeautifulSoup
 
   section = params.get("section", "main")
+  lang = params.get("lang", None)
 
   site_root = os.path.dirname(os.path.dirname(__file__))  # rawsite/
 
@@ -20,11 +21,16 @@
       sec = s.find("meta", attrs={"name": "section"})
       if not sec or sec.get("content") != section:
           continue
+      lang_detected = s.find("meta", attrs={"name": "language"})
+      if lang_detected is not None and lang is not None and lang_detected.get("content") != lang:
+          continue
       main = s.find(class_="wrapper-content") or s
       h1 = main.find("h1")
       date_el = main.find(class_="date")
       d = date.fromisoformat(date_el.get_text().strip()) if date_el else None
       desc = s.find("meta", attrs={"name": "description"})
+      
+
       description = desc.get("content", "").strip() if desc else ""
       if description:
           description = "<p>" + description + "</p>"
@@ -34,7 +40,7 @@
           description = str(p) if p else ""
       name = os.path.basename(os.path.dirname(path))
       posts.append({
-          "url": f"/pages/{name}/",
+          "url": f"pages/{name}/index.html",
           "title": h1.decode_contents().strip() if h1 else name,
           "date_str": date_el.get_text().strip() if date_el else "",
           "description": description,
