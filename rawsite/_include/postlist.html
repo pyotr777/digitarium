@@ -1,0 +1,86 @@
+<script type="text/python">
+  # Post list with pagination.
+  # Parameters (all optional):
+  #   page     - list page number, default 1
+  #   per_page - posts per list page, default 5
+  #   section  - show only pages with <meta name="section" content="...">, default "main"
+  import glob
+  import os
+  import sys
+
+  from bs4 import BeautifulSoup
+
+  page = params.get("page", 1)
+  per_page = params.get("per_page", 5)
+  section = params.get("section", "main")
+
+  site_root = os.path.dirname(os.path.dirname(__file__))  # rawsite/
+
+  posts = []
+  for path in sorted(glob.glob(os.path.join(site_root, "pages", "*", "index.html"))):
+      with open(path, encoding="utf-8") as f:
+          s = BeautifulSoup(f.read(), "html.parser")
+      sec = s.find("meta", attrs={"name": "section"})
+      if not sec or sec.get("content") != section:
+          continue
+      main = s.find(class_="wrapper-content") or s
+      h1 = main.find("h1")
+      date_el = main.find(class_="date")
+      desc = s.find("meta", attrs={"name": "description"})
+      description = desc.get("content", "").strip() if desc else ""
+      if description:
+          description = "<p>" + description + "</p>"
+      else:
+          # Fall back to the first paragraph of the article (like Jekyll's excerpt)
+          p = main.find("p")
+          description = str(p) if p else ""
+      name = os.path.basename(os.path.dirname(path))
+      posts.append({
+          "url": f"/pages/{name}/",
+          "title": h1.decode_contents().strip() if h1 else name,
+          "date": date_el.get_text().strip() if date_el else "",
+          "description": description,
+      })
+
+  posts.sort(key=lambda p: p["date"], reverse=True)
+  total_pages = max(1, -(-len(posts) // per_page))
+
+  # Build-time check: one pageN/index.html stub must exist for every list page > 1
+  for n in range(2, total_pages + 1):
+      if not os.path.isfile(os.path.join(site_root, f"page{n}", "index.html")):
+          sys.stderr.write(f"\nWARNING: page{n}/index.html is missing, posts {(n - 1) * per_page + 1}-{min(n * per_page, len(posts))} of section '{section}' are unreachable. ")
+  n = total_pages + 1
+  while os.path.isfile(os.path.join(site_root, f"page{n}", "index.html")):
+      sys.stderr.write(f"\nWARNING: page{n}/index.html is not needed, there are only {total_pages} list pages. ")
+      n += 1
+
+  # NB: no multi-line strings here - lines with a smaller indent than the code
+  # would break the dedent of this insert in parser.py
+  start = (page - 1) * per_page
+  print('<div class="posts">')
+  for post in posts[start:start + per_page]:
+      print('  <article class="post">')
+      print('    <h1>')
+      print(f'      <a href="{post["url"]}">{post["title"]}</a>')
+      print('    </h1>')
+      print('    <div class="meta">')
+      print('      <span class="date">')
+      print(f'        {post["date"]}')
+      print('      </span>')
+      print('    </div>')
+      print('    <div class="entry">')
+      print(f'      {post["description"]}')
+      print('    </div>')
+      print(f'    <a href="{post["url"]}" class="read-more">Read More</a>')
+      print('  </article>')
+      print()
+  print('</div>')
+
+  print('<div class="pagination">')
+  if page > 1:
+      prev_url = "/" if page == 2 else f"/page{page - 1}/"
+      print(f'  <span class="prev"><a href="{prev_url}" class="prev">&larr; Prev. page</a></span>')
+  if page < total_pages:
+      print(f'  <span class="next"><a href="/page{page + 1}/" class="next">Next page &rarr;</a></span>')
+  print('</div>')
+</script>

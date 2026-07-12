@@ -456,6 +456,10 @@ nav a {
     margin: 24px;
   }
 }
+/* .wrapper-content already has its own padding */
+.wrapper-content > .posts {
+  margin: 0;
+}
 .posts .tag {
   display: inline;
   font-weight: 300;
