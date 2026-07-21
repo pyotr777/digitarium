@@ -1,0 +1,31 @@
+<script type="text/python">
+  # Visible tag labels for the calling page.
+  # Reads <meta name="keywords" content="tag1, tag2, ..."> from the page
+  # that included this template (page_file) and prints a list of tag links
+  # pointing to the tags page anchors: {base_url}tags/#tag
+  import os
+  from urllib.parse import quote
+
+  from bs4 import BeautifulSoup
+
+  with open(page_file, encoding="utf-8") as f:
+      page_soup = BeautifulSoup(f.read(), "html.parser")
+
+  meta = page_soup.find("meta", attrs={"name": "keywords"})
+  tags = [t.strip() for t in meta.get("content", "").split(",") if t.strip()] if meta else []
+
+  if tags:
+      # Relative path from the calling page to the site root (parent of _include)
+      site_root = os.path.dirname(os.path.dirname(__file__))
+      base_url = os.path.relpath(site_root, os.path.dirname(page_file))
+      base_url = "" if base_url == "." else base_url + "/"
+
+      # span (not div), so the tags stay on the same line as the date;
+      # .posts .tag {display: inline} does the rest
+      print('<span class="posts">')
+      print('  <ul class="tag">')
+      for tag in tags:
+          print(f'    <li><a href="{base_url}tags/index.html#{quote(tag)}">{tag}</a></li>')
+      print('  </ul>')
+      print('</span>')
+</script>

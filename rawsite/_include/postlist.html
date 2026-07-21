@@ -6,6 +6,7 @@
   import os
   import sys
   from datetime import date
+  from urllib.parse import quote
 
   from bs4 import BeautifulSoup
 
@@ -38,6 +39,8 @@
           # Fall back to the first paragraph of the article (like Jekyll's excerpt)
           p = main.find("p")
           description = str(p) if p else ""
+      kw = s.find("meta", attrs={"name": "keywords"})
+      tags = [t.strip() for t in kw.get("content", "").split(",") if t.strip()] if kw else []
       name = os.path.basename(os.path.dirname(path))
       posts.append({
           "url": f"pages/{name}/index.html",
@@ -45,28 +48,46 @@
           "date_str": date_el.get_text().strip() if date_el else "",
           "description": description,
           "date": d,
+          "tags": tags,
       })
 
   posts.sort(key=lambda p: p["date"], reverse=True)
   total_pages = len(posts)
 
-  print('<div class="posts">')
+  # Accordion: group posts by year (already newest first, so the dict
+  # keeps years in descending order); the two most recent years with
+  # posts start opened (<details open>)
+  years = {}
   for post in posts:
-      print('  <article class="post">')
-      print('    <h1>')
-      print(f'      <a href="{post["url"]}">{post["title"]}</a>')
-      print('    </h1>')
-      print('    <div class="meta">')
-      print('      <span class="date">')
-      print(f'        {post["date"]}')
-      print('      </span>')
-      print('    </div>')
-      print('    <div class="entry">')
-      print(f'      {post["description"]}')
-      print('    </div>')
-      print(f'    <a href="{post["url"]}" class="read-more">Read More</a>')
-      print('  </article>')
-      print()
+      years.setdefault(post["date"].year, []).append(post)
+
+  print('<div class="posts">')
+  for i, (year, year_posts) in enumerate(years.items()):
+      open_attr = " open" if i < 2 else ""
+      print(f'  <details class="year"{open_attr}>')
+      print(f'    <summary>{year} <span class="count">({len(year_posts)})</span></summary>')
+      for post in year_posts:
+          print('  <article class="post">')
+          print('    <h1>')
+          print(f'      <a href="{post["url"]}">{post["title"]}</a>')
+          print('    </h1>')
+          print('    <div class="meta">')
+          print('      <span class="date">')
+          print(f'        {post["date"]}')
+          print('      </span>')
+          if post["tags"]:
+              print('      <ul class="tag">')
+              for tag in post["tags"]:
+                  print(f'        <li><a href="tags/index.html#{quote(tag)}">{tag}</a></li>')
+              print('      </ul>')
+          print('    </div>')
+          print('    <div class="entry">')
+          print(f'      {post["description"]}')
+          print('    </div>')
+          print(f'    <a href="{post["url"]}" class="read-more">Read More</a>')
+          print('  </article>')
+          print()
+      print('  </details>')
   print('</div>')
 
 </script>
