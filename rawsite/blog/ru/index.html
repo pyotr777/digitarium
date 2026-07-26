@@ -18,19 +18,19 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/style.css" />
   <link rel="alternate" type="application/rss+xml" title="Digitarium - This site is mainly about DNN training, GPUs and Docker. My personal blog (Russian and Japanese) is <a href='/blog'>here</a>." href="/feed.xml" />
 </head>
 
 <body>
   <script type="text/python">
-    html, soap = include("_include/header.html")
+    html, soap = include("../../_include/header.html")
     print(html)
   </script>
   <div id="main" class="wrapper-content">
-    <div class="language"><a href="index_blog_jp.html">JP</a></div>
+    <div class="language"><a href="../jp/index.html">JP</a></div>
     <script type="text/python">
-      html, soap = include("_include/postlist.html", section="blog", lang="ru")
+      html, soap = include("../../_include/postlist.html", section="blog", lang="ru")
       print(html)
     </script>
   </div>

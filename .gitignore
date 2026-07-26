@@ -1,6 +1,7 @@
-site
-*.*
-!.gitignore
-!*.html
-!*.css
-!*.js
+# Built site — generated into ~/Sites/digitarium, not kept in this repo
+site/
+tmp/
+
+__pycache__/
+.mypy_cache/
+.DS_Store

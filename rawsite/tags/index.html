@@ -39,8 +39,14 @@
 
       site_root = os.path.dirname(os.path.dirname(__file__))  # rawsite/
 
+      # Relative path from this page to the site root
+      base_url = os.path.relpath(site_root, os.path.dirname(page_file))
+      base_url = "" if base_url == "." else base_url + "/"
+
+      # Posts are top-level directories with an index.html; pages without
+      # <meta name="keywords"> (tags, blog indexes) are skipped below
       posts = []
-      for path in sorted(glob.glob(os.path.join(site_root, "pages", "*", "index.html"))):
+      for path in sorted(glob.glob(os.path.join(site_root, "*", "index.html"))):
           with open(path, encoding="utf-8") as f:
               s = BeautifulSoup(f.read(), "html.parser")
           meta = s.find("meta", attrs={"name": "keywords"})
@@ -55,7 +61,7 @@
           d = date.fromisoformat(date_el.get_text().strip()) if date_el else date.min
           name = os.path.basename(os.path.dirname(path))
           posts.append({
-              "url": f"../pages/{name}/index.html",
+              "url": f"{base_url}{name}/index.html",
               "title": h1.decode_contents().strip() if h1 else name,
               "date": d,
               "tags": tags,

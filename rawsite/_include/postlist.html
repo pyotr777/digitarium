@@ -15,8 +15,15 @@
 
   site_root = os.path.dirname(os.path.dirname(__file__))  # rawsite/
 
+  # Relative path from the page being rendered to the site root, so that the
+  # same template works from "/", "/blog/" and "/blog/ru/"
+  base_url = os.path.relpath(site_root, os.path.dirname(page_file))
+  base_url = "" if base_url == "." else base_url + "/"
+
+  # Posts are top-level directories with an index.html; pages without a
+  # <meta name="section"> (tags, blog indexes) are skipped by the filter below
   posts = []
-  for path in sorted(glob.glob(os.path.join(site_root, "pages", "*", "index.html"))):
+  for path in sorted(glob.glob(os.path.join(site_root, "*", "index.html"))):
       with open(path, encoding="utf-8") as f:
           s = BeautifulSoup(f.read(), "html.parser")
       sec = s.find("meta", attrs={"name": "section"})
@@ -43,7 +50,7 @@
       tags = [t.strip() for t in kw.get("content", "").split(",") if t.strip()] if kw else []
       name = os.path.basename(os.path.dirname(path))
       posts.append({
-          "url": f"pages/{name}/index.html",
+          "url": f"{base_url}{name}/index.html",
           "title": h1.decode_contents().strip() if h1 else name,
           "date_str": date_el.get_text().strip() if date_el else "",
           "description": description,
@@ -78,7 +85,7 @@
           if post["tags"]:
               print('      <ul class="tag">')
               for tag in post["tags"]:
-                  print(f'        <li><a href="tags/index.html#{quote(tag)}">{tag}</a></li>')
+                  print(f'        <li><a href="{base_url}tags/index.html#{quote(tag)}">{tag}</a></li>')
               print('      </ul>')
           print('    </div>')
           print('    <div class="entry">')
