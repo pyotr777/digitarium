@@ -28,7 +28,7 @@
   <div class="navlist">
     <nav>
       <script type="text/python">
-        print(f'<a href="{base_url}index.html">Home page</a>')
+        print(f'<a href="{base_url}index.html">Home</a>')
         print(f'<a href="{base_url}tags/index.html">Tags</a>')
         print(f'<a href="{base_url}blog/index.html">Blog</a>')
       </script>
@@ -67,6 +67,13 @@
           referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
           <!-- End of Statcounter Code -->
         </p>
+        <script type="text/python">
+            from datetime import date            
+            print(f'  <a class="panehe-logo" href="https://github.com/pyotr777/panehe/" aria-label="Panehe">')
+            print(f'    <img src="img/panehe-wood.png" alt="" width="55" height="72" loading="lazy">')
+            print('  </a>')
+            print(f'  <p class="buildstamp">Built with <a href="https://github.com/pyotr777/panehe/">Panehe</a><br>{date.today().isoformat()}</p>')
+        </script>
         <p>Copyright (c) 2019-2021 Bryzgalov Peter, <a href="https://stair.center" target="_blank">Stair lab</a>, <a href="http://www.it-chiba.ac.jp" target="_blank">Chiba Institute of Technology</a>, Japan</p>
     </footer>
   </div>

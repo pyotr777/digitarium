@@ -270,6 +270,10 @@ a.footnote:hover, .post p a.footnote:hover, .post ol a.footnote:hover, .post ul 
   background: #f1f3f5;
 }
 
+.panehe-logo img{display:block;height:2.8rem;width:auto;
+  float: left;
+}
+
 .footnotes {
   border-top: 1px solid #f1f3f5;
   font-size: 10pt;
@@ -690,7 +694,9 @@ nav a {
 
 footer {
   padding: 20px 0;
-  text-align: center;
+  text-align: left;
+  color: #adb5bd;
+  font-family: "Roboto Condensed", sans-serif;
 }
 footer p {
   font-size: 10pt;
@@ -721,6 +727,11 @@ footer .svg-icon em {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.buildstamp {
+  margin-left: 40px;
+  padding-left:10px;
 }
 
 pre, code {
