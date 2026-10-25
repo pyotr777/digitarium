@@ -1,7 +1,7 @@
 # Built site — generated into ~/Sites/digitarium, not kept in this repo
 site/
 tmp/
-
+panehe.py
 __pycache__/
 .mypy_cache/
 .DS_Store
